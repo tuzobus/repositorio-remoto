@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--No utilices etiquetas desaprobadas.
+Recuerda incluir tus datos e información de contacto (nombre, matrícula, correo electrónico).
+Utiliza tu creatividad.
+No es necesario que la página cuente con estilos, ni JavaScript.
+Pon el nombre del editor HMTL que utilizaste y el enlace al sitio del editor como pie de página.
+Valida tus documentos con la herramienta validator.w3.org--> 
+<html>
+<head>
+	<title>Laboratorio 1</title>
+</head>
+<body>
+	<header>
+		<h1>Laboratorio 1: pagina personal</h1>
+	</header>
+	<section>
+		<article>
+			<p><strong>Datos de contacto</strong></p>
+			<ul>
+				<li>Marco Ivan Flores Villanueva</li>
+				<li>A01276586</li>
+				<li>a01276586@tec.mx</li>
+			</ul>
+		</article>
+		<article>
+			<p><strong>Sobre la salsa</strong></p>
+			<p>
+				La salsa es un género musical de origen caribeño, pero desarrollado en Nueva York en la década de los 60s. Fusiona ritmos afro-cubanos como el mambo con influencias del jazz y música puertorriqueña. La salsa es conocida por su energía, patrones complejos de percusiones y letras románticas.
+			</p>
+			<p><strong>Mis canciones favoritas de salsa:</strong></p>
+			<ol>
+				<li><a href="https://open.spotify.com/intl-es/track/6JUOHyIgRFhZumikb2u1uA?si=3a52067d080e4fe1">Si supieras - Pedro Conga</a></li>
+				<li><a href="https://open.spotify.com/intl-es/track/6JUOHyIgRFhZumikb2u1uA?si=3a52067d080e4fe1">Hechizo de luna - Edgar Joel</a></li>
+				<li><a href="https://open.spotify.com/intl-es/track/6JUOHyIgRFhZumikb2u1uA?si=3a52067d080e4fe1">A pesar del tiempo - Mickey Taveras</a></li>
+			</ol>
+		</article>
+		<article>
+			<header>
+				<p><strong>Suscríbete al salsa-newsletter</strong></p>
+			</header>
+			<form>
+				<p>
+					<label>Correo para recibir novedades de salsa: 
+						<input type="email" placeholder="salsa@salseros.com" required="">
+					</label>
+				</p>
+				<p>
+					<label>Número de canciones a enviar: 
+						<input type="number" min="0" max="10" step="1" value="8">
+					</label>
+				</p>
+				<p>
+					<label>Tu canción favorita: 
+						<input type="url" placeholder="https://ejemplo.salsa.com">
+					</label>
+				</p>
+				<p>
+					<input type="submit" value="Enviar">
+				</p>
+				
+			</form>
+		</article>
+		<article>
+			<p><strong>Preguntas del laboratorio 1</strong></p>
+			<ul>
+				<li>¿Cuál es la diferencia entre Internet y la World Wide Web?</li>
+				<p>El internet es una red de computadoras que abarca todo el planeta, las cuales están conectadas entre sí, mientras que WWW es la colección de páginas que se alojan en esta red.</p>
+
+				<li>¿Cuáles son las partes de un URL?</li>
+				<p>Un URL empieza con el esquema (http o https), el nombre de host (www.ejemplo.com), la ruta (/ejemplo/index.html), y una cadena de consulta (proporciona parámetros para que un recurso pueda usarlos, como en una búsqueda)</p>
+
+				<li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</li>
+				<p>GET recupera datos de un recurso específico. HEAD pide una respuesta idéntica a GET pero sin el cuerpo de la respuesta. POST envía una entidad a un recurso específico. PUT reemplaza las representaciones actuales del recurso de destino con el contenido de la petición. PATCH aplica modificaciones parciales a un recurso. DELETE borra un recurso específico.</p>
+
+
+				<li>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</li>
+				<p>Se debe utilizar el método POST pues este permite enviar varios datos en el cuerpo de la solicitud, además de que estos datos no se incluyen en la URL y se evita que queden registrados en el historial.</p>
+
+
+				<li>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</li>
+				<p>El método que se utiliza es GET, pues permite que los parámetros puedan ir en la URL efectivamente.</p>
+
+				<li>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</li>
+				<p>Este código 200 significa que la solicitud se procesó correctamente y no pasó ningun error.</p>
+
+				<li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</li>
+				<p>Lo más probable es que sí, pued un error 404 significa que un archivo no se encontró en el servidor, por lo que pudo haber sido eliminado por el mismo desarrollador o la configuración de rutas esté incorrecta.</p>
+
+				<li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</li>
+				<p>Un error 500 significa que el servidor falló al intentar ejecutar una solicitud, por lo que existe la probabilidad de que el error radique en el servidor, lo cual ya no le correspondería a un desarrollador web.</p>
+
+				<li>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</li>
+				<p>Un atributo despreciado básicamente significa que está obsoleto. Ejemplos de esto pueden ser: font, center, big, small y applet (para js)</p>
+
+				<li>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</li>
+				<p>HTML 5 introduce mejoras respecto al 4. El 5 introduce etiquetas semánticas como header y footer, nuevos tipos de inputs, tiene una mejor integración con CSS, y mejora su renderización.</p>
+
+				<li>¿Qué componentes de estructura y estilo tiene una tabla?</li>
+				<p>Una tabla en HTML está conformada por varias etiquetas. table es el contenedor principal de la tabla. tr es cada línea horizontal dentro de la tabla. th son las celdas de encabezado. td contiene información dentro de la tabla. caption contiene el título o la descripción de la tabla</p>
+
+				<li>¿Cuáles son los principales controles de una forma HTML5?</li>
+				<p>HTML tiene tipos de controles de entrada para formularios, como <strong>input</strong>, el cual a su vez tiene varios tipos que facilitan la organización y distinguen los tipos de datos de entrada. Algunos ejemplos de estos tipos de input son: text, password, email, number, url, etc.</p>
+
+				<li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</li>
+				<p>Mi navegador, Arc, tiene un puntaje de 525/555 puntos, por lo que tiene un soporte relativamente bueno de HTML5.</p>
+
+				<li>¿Cuál es el ciclo de vida de los sistemas de información?</li>
+				<p>Planificación->análisis de requerimientos->diseño del sistema->implementación->pruebas->instalación->uso</p>
+
+				<li>¿Cuál es el ciclo de desarrollo de sistemas de información?</li>
+				<p>Identificación del problema->planificación->definición de los requisitos->diseño y creación de prototipos->desarrollo de software->evaluación->despliegue->operaciones y mantenimiento</p>
+			</ul>
+		</article>
+		<article>
+			<p><strong>Referencias</strong></p>
+			<ul>
+				<li>BBC redacción. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</li>
+				<li>IBM. (s.f.). Los componentes de un URL. IBM. https://www.ibm.com/docs/es/cics-ts/6.x?topic=concepts-components-url</li>
+				<li>mdn web docs. (s.f.). Métodos de petición HTTP. mozilla. https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Methods</li>
+			</ul>
+		</article>
+	</section>
+	<footer>
+		<p>Pagina web hecha en el editor <a href="https://www.sublimetext.com/">Sublime Text</a></p>
+	</footer>
+
+	</html>
