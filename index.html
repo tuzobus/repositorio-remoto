@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<!--No utilices etiquetas desaprobadas.
-Recuerda incluir tus datos e información de contacto (nombre, matrícula, correo electrónico).
-Utiliza tu creatividad.
-No es necesario que la página cuente con estilos, ni JavaScript.
-Pon el nombre del editor HMTL que utilizaste y el enlace al sitio del editor como pie de página.
-Valida tus documentos con la herramienta validator.w3.org--> 
+<!--Marco Iván Flores Villanueva A01276586--> 
 <html>
 <head>
 	<title>Laboratorio 1</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<header>
@@ -15,7 +11,7 @@ Valida tus documentos con la herramienta validator.w3.org-->
 	</header>
 	<section>
 		<article>
-			<p><strong>Datos de contacto</strong></p>
+			<p class="titulo-seccion">Datos de contacto</p>
 			<ul>
 				<li>Marco Ivan Flores Villanueva</li>
 				<li>A01276586</li>
@@ -23,11 +19,11 @@ Valida tus documentos con la herramienta validator.w3.org-->
 			</ul>
 		</article>
 		<article>
-			<p><strong>Sobre la salsa</strong></p>
-			<p>
+			<p class="titulo-seccion">Sobre la salsa</p>
+			<p class="box">
 				La salsa es un género musical de origen caribeño, pero desarrollado en Nueva York en la década de los 60s. Fusiona ritmos afro-cubanos como el mambo con influencias del jazz y música puertorriqueña. La salsa es conocida por su energía, patrones complejos de percusiones y letras románticas.
 			</p>
-			<p><strong>Mis canciones favoritas de salsa:</strong></p>
+			<p class="titulo-seccion">Mis canciones favoritas de salsa:</p>
 			<ol>
 				<li><a href="https://open.spotify.com/intl-es/track/6JUOHyIgRFhZumikb2u1uA?si=3a52067d080e4fe1">Si supieras - Pedro Conga</a></li>
 				<li><a href="https://open.spotify.com/intl-es/track/6JUOHyIgRFhZumikb2u1uA?si=3a52067d080e4fe1">Hechizo de luna - Edgar Joel</a></li>
@@ -36,12 +32,12 @@ Valida tus documentos con la herramienta validator.w3.org-->
 		</article>
 		<article>
 			<header>
-				<p><strong>Suscríbete al salsa-newsletter</strong></p>
+				<p class="titulo-seccion">Suscríbete al salsa-newsletter</p>
 			</header>
 			<form>
 				<p>
 					<label>Correo para recibir novedades de salsa: 
-						<input type="email" placeholder="salsa@salseros.com" required="">
+						<input type="email" placeholder="salsa@salseros.com">
 					</label>
 				</p>
 				<p>
@@ -61,8 +57,8 @@ Valida tus documentos con la herramienta validator.w3.org-->
 			</form>
 		</article>
 		<article>
-			<p><strong>Preguntas del laboratorio 1</strong></p>
-			<ul>
+			<p class="titulo-seccion">Preguntas del laboratorio 1</p>
+			<ul class="preguntas">
 				<li>¿Cuál es la diferencia entre Internet y la World Wide Web?</li>
 				<p>El internet es una red de computadoras que abarca todo el planeta, las cuales están conectadas entre sí, mientras que WWW es la colección de páginas que se alojan en esta red.</p>
 
@@ -99,7 +95,7 @@ Valida tus documentos con la herramienta validator.w3.org-->
 				<p>Una tabla en HTML está conformada por varias etiquetas. table es el contenedor principal de la tabla. tr es cada línea horizontal dentro de la tabla. th son las celdas de encabezado. td contiene información dentro de la tabla. caption contiene el título o la descripción de la tabla</p>
 
 				<li>¿Cuáles son los principales controles de una forma HTML5?</li>
-				<p>HTML tiene tipos de controles de entrada para formularios, como <strong>input</strong>, el cual a su vez tiene varios tipos que facilitan la organización y distinguen los tipos de datos de entrada. Algunos ejemplos de estos tipos de input son: text, password, email, number, url, etc.</p>
+				<p>HTML tiene tipos de controles de entrada para formularios, como input, el cual a su vez tiene varios tipos que facilitan la organización y distinguen los tipos de datos de entrada. Algunos ejemplos de estos tipos de input son: text, password, email, number, url, etc.</p>
 
 				<li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</li>
 				<p>Mi navegador, Arc, tiene un puntaje de 525/555 puntos, por lo que tiene un soporte relativamente bueno de HTML5.</p>
@@ -112,7 +108,26 @@ Valida tus documentos con la herramienta validator.w3.org-->
 			</ul>
 		</article>
 		<article>
-			<p><strong>Referencias</strong></p>
+			<p class="titulo-seccion">Preguntas del laboratorio 3</p>
+			<ul class="preguntas">
+				<li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?</li>
+				<p>!important es una regla que supera en prioridad a cualquier otra especificación en un archivo css, por lo que el diseño de cascada queda básicamente ignorado al usarse !important en alguna propiedad. Como desarrollador de software, recomendaría evitarlo porque el orden creado a partir de las especificaciones que van desde los selectores por elemento que cubren todo el documento hasta los más específicos por clase, se ve básicamente ignorado y roto por el uso del mismo.</p>
+				
+				<li>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</li>
+				<p>Hay varias razones por las cuales debería escogerse con cuidado, la más evidente serían los derechos de autor y cómo elegir una imagen con copyright podría traer problemas legales. En un sentido orientado a diseño, una imagen mal elegida podría brindar mal contraste para el contenido de la página, o simplemente podría tener un mal aspecto al establecerla como fondo.</p>
+
+				<li>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+				<p>Estas unidades de estilo dependen del contexto en que se quieran utilizar. El porcentaje es mejor cuando se busca un diseño responsivo relativo al contenedor padre, los pixeles cuando se necesita un tamaño fijo, y los puntos cuando se buscan medidas físicas, pero no es bueno usarlo para pantallas, pues no interpretan estos tamaños físicos con su tamaño real.</p>
+
+				<li>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</li>
+				<p>Estas unidades de estilo dependen del contexto en que se quieran utilizar. El porcentaje es mejor cuando se busca un diseño responsivo relativo al contenedor padre, los pixeles cuando se necesita un tamaño fijo, y los puntos cuando se buscan medidas físicas, pero no es bueno usarlo para pantallas, pues no interpretan estos tamaños físicos con su tamaño real, solo deben de usarse cuando se desee imprimir el contenido.</p>
+
+				<li>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</li>
+				<p>Al usar una versión minimizada del CSS el tamaño del archivo disminuye, y por lo tanto tarda menos en cargarse en el navegador.</p>
+			</ul>
+		</article>
+		<article>
+			<p class="titulo-seccion">Referencias</p>
 			<ul>
 				<li>BBC redacción. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</li>
 				<li>IBM. (s.f.). Los componentes de un URL. IBM. https://www.ibm.com/docs/es/cics-ts/6.x?topic=concepts-components-url</li>
@@ -121,7 +136,7 @@ Valida tus documentos con la herramienta validator.w3.org-->
 		</article>
 	</section>
 	<footer>
-		<p>Pagina web hecha en el editor <a href="https://www.sublimetext.com/">Sublime Text</a></p>
+		<p>Pagina web hecha en el editor <a id="destacado" href="https://www.sublimetext.com/">Sublime Text</a></p>
 	</footer>
 
 	</html>
