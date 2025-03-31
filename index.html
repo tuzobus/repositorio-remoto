@@ -4,6 +4,73 @@
 <head>
 	<title>Laboratorio 1</title>
 	<link rel="stylesheet" href="styles.css">
+	<script>
+		function generarTabla() {
+			let numero = prompt("Introduce un número:");
+			document.write("<h2>Tabla de Cuadrados y Cubos</h2>");
+			document.write("<table border='1'><tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>");
+			for (let i = 1; i <= numero; i++) {
+				document.write('<tr>' +
+					'<td>' + i + '</td>' +
+					'<td>' + (i ** 2) + '</td>' +
+					'<td>' + (i ** 3) + '</td>' +
+					'</tr>');
+			}
+			document.write('</table>');
+		}
+
+		function pruebaSuma() {
+			let numero1 = Math.floor(Math.random() * 10);
+			let numero2 = Math.floor(Math.random() * 10);
+			let inicio = Date.now();
+			let respuesta = prompt('Cuánto es ' + numero1 + ' + ' + numero2 + '?');
+			let fin = Date.now();
+			let tiempo_total = (fin - inicio) / 1000;
+			let mensaje;
+			if (respuesta == numero1 + numero2) {
+				mensaje = 'Correcto!';
+			} else {
+				mensaje = 'Incorrecto';
+			}
+			document.write('<p>' + mensaje + '. Tiempo: ' + tiempo_total + 's.</p>');
+		}
+
+		function contador(arr) {
+			let negativos = arr.filter(n => n < 0).length;
+			let ceros = arr.filter(n => n === 0).length;
+			let positivos = arr.filter(n => n > 0).length;
+			document.write('<p>' + negativos + ' ' + ceros + ' ' + positivos + '</p>');
+		}
+		function testContador() {
+			console.assert(JSON.stringify(contador([1, -2, 0, 5, -7, 0, 8])) === JSON.stringify({ negativos: 2, ceros: 2, positivos: 3 }));
+		}
+
+		function inverso(numero) {
+			return numero.toString().split('').reverse().join('');
+		}
+		function testInverso() {
+			console.assert(inverso(12345) === 54321);
+		}
+
+		function fibonacci() {
+		    let num_fib = prompt("Introduce un número:");
+		    let a = 0, b = 1;
+		    document.write('<h2>Primeros ' + num_fib + ' números de fibonacci</h2>');
+		    document.write('<p>' + a + '</p>');
+		    if (num_fib > 1) {
+		        document.write('<p>' + b + '</p>');
+		    }
+		    for (let i = 2; i < num_fib; i++) {
+		        let sig = a + b;
+		        document.write('<p>' + sig + '</p>');
+		        a = b;
+		        b = sig;
+		    }
+		}
+
+
+
+</script>
 </head>
 <body>
 	<header>
@@ -126,6 +193,36 @@
 				<p>Al usar una versión minimizada del CSS el tamaño del archivo disminuye, y por lo tanto tarda menos en cargarse en el navegador.</p>
 			</ul>
 		</article>
+
+		<article>
+			<p class="titulo-seccion">Preguntas del laboratorio 4</p>
+			<ul class="preguntas">
+				<li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</li>
+				<p>Las principales diferencias entre java y JS, que son lenguajes completamente diferentes, radica en que java requiere de la java virutal machine para compilares, mientras que JS puede compilarse en tiempo real en un navegador. Java se utiliza principalmente para desarrollar apps de escritorio, mientras que JS para desarrollar aplicaciones web.</p>
+				
+				<li>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</li>
+				<p>Date.now() devuelve el número de milisegundos transcurridos desde el 1 de enero de 1970 a las 00:00:00 UTC. getMonth() devuelve el mes actual (empieza en 0 (enero)). getDay() devuelve el día de la semana (empieza en 0 (lunes)). getHour() devuelve la hora actual. getFullYear() devuelve el año como 4 dígitos (XXXX).</p>
+
+				<li>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</li>
+				<p>push() agrega un elemento al final del arreglo. pop() elimina el último elemento del arreglo y lo devuelve. shift() elimina el primer elemento y lo devuelve. slice() devuelve una copia del arreglo desde un elemento inicial a uno final. splice() elimina elementos desde un elemento inicial a uno final</p>
+
+				<li>¿Cómo se declara una variable con alcance local dentro de una función?</li>
+				<p>Para esto se utiliza la palabra "let".</p>
+
+				<li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</li>
+				<p>Usar variables globales puede ser contraproducente en el sentido de que varias funciones no podrán usar el mismo nombre de variable con contenidos diferentes, aunque esto también podría verse como una ventaja al no tener que declarar la misma variable varias veces, todo depende del contexto.</p>
+			</ul>
+		</article>
+
+		<article>
+			<h1>Ejercicios de JavaScript</h1>
+			<button onclick="generarTabla()">Generar Tabla</button>
+			<button onclick="pruebaSuma()">Prueba de Suma</button>
+			<button onclick="testContador(); alert('Test contador ejecutado')">Test Contador</button>
+			<button onclick="testInverso(); alert('Test inverso ejecutado')">Test Inverso</button>
+			<button onclick="fibonacci()">Fibonacci</button>
+		</article>
+
 		<article>
 			<p class="titulo-seccion">Referencias</p>
 			<ul>
