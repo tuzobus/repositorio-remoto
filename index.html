@@ -53,24 +53,24 @@
 		}
 
 		function fibonacci() {
-		    let num_fib = prompt("Introduce un número:");
-		    let a = 0, b = 1;
-		    document.write('<h2>Primeros ' + num_fib + ' números de fibonacci</h2>');
-		    document.write('<p>' + a + '</p>');
-		    if (num_fib > 1) {
-		        document.write('<p>' + b + '</p>');
-		    }
-		    for (let i = 2; i < num_fib; i++) {
-		        let sig = a + b;
-		        document.write('<p>' + sig + '</p>');
-		        a = b;
-		        b = sig;
-		    }
+			let num_fib = prompt("Introduce un número:");
+			let a = 0, b = 1;
+			document.write('<h2>Primeros ' + num_fib + ' números de fibonacci</h2>');
+			document.write('<p>' + a + '</p>');
+			if (num_fib > 1) {
+				document.write('<p>' + b + '</p>');
+			}
+			for (let i = 2; i < num_fib; i++) {
+				let sig = a + b;
+				document.write('<p>' + sig + '</p>');
+				a = b;
+				b = sig;
+			}
 		}
 
 
 
-</script>
+	</script>
 </head>
 <body>
 	<header>
@@ -235,5 +235,5 @@
 	<footer>
 		<p>Pagina web hecha en el editor <a id="destacado" href="https://www.sublimetext.com/">Sublime Text</a></p>
 	</footer>
-
-	</html>
+</body>
+</html>
