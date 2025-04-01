@@ -1,0 +1,9 @@
+/* Usé !important para que los colores predeterminados
+de bootstrap no afectaran a los que estaba definiendo */
+.bg-primary {
+    background-color: #607d8b !important;
+}
+
+.bg-dark {
+    background-color: #212121 !important;
+}
