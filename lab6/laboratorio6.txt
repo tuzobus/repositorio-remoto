@@ -1,0 +1,11 @@
+LABORATORIO 6
+Marco Iván Flores Villanueva
+
+¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+Porque de esta manera tenemos la confirmación de un script y la seguridad de que los datos enviados no serán incorrectos, ya sea por un error del usuario o por alguna mala intención; de esta forma nos ahorramos tiempo y también recursos del servidor.
+
+¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+Estas validaciones de JS también pueden ser algo débiles porque JS corre del lado del cliente. Usuarios con malas intenciones pueden bypasear las validaciones antes de enviar datos al servidor con simplemente desactivar JS del navegador, haciendo que cualquier persona pueda vulnerar una página web débil, o bien, si se usa la consola del navegador, es posible alterar el código JS del sitio.
+
+Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?
+Incluir estas validaciones de JS es una buena práctica del lado del cliente porque previene errores del usuario al introducir datos de manera errónea o con un mal formato; el problema surge cuando esta validación del lado del cliente es la única que se utiliza, haciendo que todo sea sumamente vulnerable a usuarios con fines maliciosos. Es por esto que siempre se debe realizar la validación en el servidor también, lo cual nos asegura que incluso si un usuario manipula los datos antes de enviarlos, esto será detectado y serán rechazados.
