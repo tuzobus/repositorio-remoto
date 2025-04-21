@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <%- include('./../css.ejs') %>
+</head>
+<body>
+<h1>Obtener Usuarios</h1>
+<% for (let i = 0; i < usuarios.length; i++) { %>
+    <p><%= usuarios[i].nombre %></p>
+<% } %>
+</body>
+<%- include('./../scripts.ejs') %>
+</html>
