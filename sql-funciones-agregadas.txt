@@ -1,0 +1,45 @@
+Marco Iván Flores Villanueva A01276586
+Oswaldo Isaías Hernandez Santes A01199004
+
+1)
+SELECT
+e.nombre AS "Actor",
+SUM(e.sueldo) AS "Ingreso total"
+FROM Elenco e
+GROUP BY e.nombre;
+
+2)
+SELECT
+p.nomestudio AS "Estudio",
+SUM(p.presupuesto) AS "Presupuesto total años 80"
+FROM Película p
+WHERE p.año BETWEEN 1980 AND 1989
+GROUP BY p.nomestudio;
+
+3)
+SELECT
+a.nombre AS "Actor",
+AVG(e.sueldo) AS "Sueldo promedio"
+FROM Actor a
+JOIN Elenco e ON a.nombre = e.nombre
+WHERE a.sexo = 'M'
+GROUP BY a.nombre
+HAVING AVG(e.sueldo) > 5000000;
+
+4)
+SELECT
+p.título AS "Pelicula",
+p.año AS "Año"
+FROM Película p
+WHERE (p.título, p.presupuesto) IN (
+SELECT título, MIN(presupuesto)
+FROM Película
+GROUP BY título
+);
+
+5)
+SELECT
+MAX(e.sueldo) AS "Sueldo maximo actriz"
+FROM Elenco e
+JOIN Actor a ON e.nombre = a.nombre
+WHERE a.sexo = 'F';

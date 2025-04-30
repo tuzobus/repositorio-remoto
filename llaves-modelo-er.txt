@@ -1,0 +1,50 @@
+Marco Iván Flores Villanueva A01276586
+Oswaldo Isaías Hernandez Santes A01199004
+
+1. PR{Descripcion}(SL{Clave > 2000 ^ Precio < 100}(Materiales))
+
+2. PR{Descripcion}(Materiales JN SL{Denominacion="Aguascalientes"}(Proyectos)JN Entregan)
+
+3. PR{RazonSocial}(SL{Clave = 1000 ∧ Cantidad > 100}(Entregan)JN Proveedores)
+
+
+4. R1 = PR {RFC} (SL {Descripcion = "Varilla 3/4" ∧ Denominacion = "Mérida"} (Materiales JN Entregan JN Proyectos))
+
+R2 = PR {RFC} (SL {Descripcion = "Varilla 3/4" ∧ Denominacion = "San Luis"} (Materiales JN Entregan JN Proyectos))
+
+R1 IN R2
+
+5. PR {Denominacion, Descripcion, RazonSocial} (SL {Fecha >= "1997-01-01" ∧ Fecha <= "1997-12-31"} (Proyectos JN Entregan JN Materiales JN Proveedores))
+
+
+----------
+
+1. PR {título} (SL {nombre = "Sharon Stone"} (Elenco))
+
+2. PR {nombre, importeventas} (Productor JN (Película JN (SL {nombre = "Tom Cruise"} (Elenco))))
+
+3. PR {dirección} (
+  Estudio JN (
+    Película JN (
+      SL {nombre = "Salma Hayek"} (Elenco)
+      UN
+      SL {nombre = "Antonio Banderas"} (Elenco))) JN SL {duración > 180} (Película))
+
+4. PR {nombre} (
+  SL {sexo = "F"} (
+    Actor JN (
+      Elenco JN (
+        SL {título = "Los enamorados"} (
+          Película JN SL {nomestudio = "Warner"} (Estudio))))))
+
+5. PR {dirección, teléfono, sexo} (
+  Actor JN (
+    Elenco JN (
+      PR {título, año} (
+        SL {año = 1999} (
+          Película JN SL {dirección = "Epigmenio" ∨ dirección = "La gran manzana"} (Estudio)))
+      IN
+      PR {título, año} (
+        SL {año = 2010} (
+          Película JN SL {dirección = "Epigmenio" ∨ dirección = "La gran manzana"} (Estudio)
+        )))))
