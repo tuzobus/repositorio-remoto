@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+<main role="main" class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h4 class="card-title">Formulario</h4>
+        </div>
+        <div class="card-body">
+            <form action="/formulario/guardar_texto" method="POST">
+                <div class="mb-3">
+                    <label for="imprimir" class="form-label">Texto a guardar:</label>
+                    <input type="text" name="imprimir" class="form-control" value="<%= ultimoTexto %>" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <% if (ultimoTexto) { %>
+            <div class="card-footer">
+                <p class="mb-0">Último texto guardado: <%= ultimoTexto %></p>
+            </div>
+        <% } %>
+    </div>
+</main>
