@@ -1,0 +1,17 @@
+<%- include('includes/head.ejs') %>
+<main role="main" class="container mb-5">
+    <h2 class="mt-5">Respuestas al Lab17</h2>
+    <p class="fw-bold">¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</p>
+    <p>Escribir el código SQL en los models mantiene el código de la aplicación organizado al separar
+    el acceso a datos de los demás módulos del sistema. Esto permite visualizar y modificar consultas sin
+    afectar otras capas, facilitando el trabajo colaborativo y mejorando la seguridad al gestionar todas
+    las validaciones en un mismo sitio. En adición a la implementación del modelo MVC, esta práctica ayuda
+    a optimizar la estructura del proyecto, mejorando su escalabilidad de igual forma.</p>
+
+    <p class="fw-bold">¿Qué es SQL injection y cómo se puede prevenir?</p>
+    <p>Este método de ataque sucede cuando un usuario con intenciones maliciosas inserta código SQL modificado
+    en consultas de la aplicación con el propósito de aprovechar vulnerabilidades del sistema para visualizar,
+    modificar o incluso eliminar datos de una base de datos. Ya que la inyección de este código depende de la capacidad
+    de un atacante para manipular las entradas de datos, si estas se restringen y se limitan los tipos de procedimientos
+    de bases de datos que se pueden realizar, el riesgo de consultas maliciosas se pueden minimizar.</p>
+</main>
