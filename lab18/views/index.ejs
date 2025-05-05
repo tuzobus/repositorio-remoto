@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lab18: Ruta <%= numRuta%></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<main role="main" class="container">
+    <h1 class="mt-5">Lab18: Ruta <%= numRuta%></h1>
+    <p>Marco Iván Flores Villanueva A01276586</p>
+
+    <% if (!isAuthenticated) { %>
+        <div class="mb-3">
+            <a href="/auth/login" class="btn btn-primary">Login</a>
+            <a href="/auth/signup" class="btn btn-secondary">Signup</a>
+        </div>
+    <% } else { %>
+        <form action="/auth/logout" method="POST" class="mb-3">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    <% } %>
+
+    <p><a href="/">Ruta 1: login y signup</a></p>
+    <p><a href="/ruta2">Ruta 2</a></p>
+    <p><a href="/books">Ruta 3 (books: base de datos test)</a></p>
+    <p><a href="/ruta4">Ruta 4</a></p>
+    <p><a href="/formulario/guardar_texto">Ruta 5 (Formulario)</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<%- include('../includes/head.ejs') %>
+<main role="main" class="container mb-5">
+    <h2 class="mt-5">Editar libro</h2>
+<form action="/books/edit/<%= book.BookID %>" method="POST">
+    <label>Título:</label>
+    <input type="text" name="title" value="<%= book.Title %>" required>
+    <button type="submit">Actualizar</button>
+</form>
