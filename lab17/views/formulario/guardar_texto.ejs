@@ -1,0 +1,10 @@
+<%- include('../includes/head.ejs') %>
+<main role="main" class="container">
+    <form action="/formulario/guardar_texto" method="POST" class="mt-5">
+        <div class="mb-3">
+            <label for="imprimir" class="form-label">Texto a guardar:</label>
+            <input type="text" name="imprimir" class="form-control" required><br>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</main>

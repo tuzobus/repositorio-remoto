@@ -1,0 +1,13 @@
+<%- include('../includes/head.ejs') %>
+<main role="main" class="container mb-5">
+    <h2 class="mt-5">books: base de datos test</h2>
+<a href="/books/add">Añadir nuevo libro a tabla books</a>
+<ul>
+    <% books.forEach(book => { %>
+        <li>
+            <%= book.Title %>
+            <a href="/books/edit/<%= book.BookID %>">Editar</a>
+        </li>
+    <% }); %>
+</ul>
+</main>
