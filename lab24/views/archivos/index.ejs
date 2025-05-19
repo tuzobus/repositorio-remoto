@@ -1,0 +1,24 @@
+<%- include('../includes/head.ejs') %>
+<main role="main" class="container">
+    <div class="mb-3">
+        <form action="/archivos/upload_file" method="POST" enctype="multipart/form-data" id="form">
+            <div class="mb-3">
+                <h1>Multipart File Upload</h1>
+                <label for="files">Select files</label>
+                <input id="file" name="file" type="file" />
+            </div>
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="mb-3">
+        <form action="/archivos/upload_file_private" method="POST" enctype="multipart/form-data" id="form">
+            <div class="mb-3">
+                <h1>Multipart Private File Upload</h1>
+                <label for="files">Select files</label>
+                <input id="file" name="file" type="file" />
+            </div>
+            <button class="btn btn-primary" type="submit">Upload</button>
+        </form>
+    </div>
+</main>
