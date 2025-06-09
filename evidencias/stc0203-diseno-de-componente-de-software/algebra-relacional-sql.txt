@@ -1,0 +1,125 @@
+Marco Iván Flores Villanueva A01276586
+Oswaldo Isaías Hernandez Santes A01199004
+
+1. PR{nombre, fechanacimiento, título} (
+  SL{sexo = 'F'}(
+    Actor JN Elenco
+  )
+)
+
+SELECT a.nombre, a.fechanacimiento, e.título
+FROM Actor a JOIN Elenco e ON a.nombre = e.nombre
+WHERE a.sexo = 'F';
+
+
+2. PR{título} (
+  SL{nombre = 'Mike Myers' AND año BETWEEN 2010 AND 2019}(
+    Elenco
+  )
+)
+
+SELECT título
+FROM Elenco
+WHERE nombre = 'Mike Myers' AND año BETWEEN 2010 AND 2019;
+
+
+3. PR{nombre, importeventas} (
+  Productor JN (
+    Película JN (
+      SL{nombre = 'Tom Cruise'}(Elenco)
+    )
+  )
+)
+
+SELECT p.nombre, p.importeventas
+FROM Productor p
+JOIN Película pl ON p.idproductor = pl.idproductor
+JOIN Elenco e ON pl.título = e.título AND pl.año = e.año
+WHERE e.nombre = 'Tom Cruise';
+
+
+4. PR{dirección}(
+  Estudio JN (
+    Película JN (
+      SL{duración > 180 AND (nombre = 'Salma Hayek' OR nombre = 'Antonio Banderas')}(Elenco)
+    )
+  )
+)
+
+SELECT es.dirección
+FROM Estudio es
+JOIN Película pl ON es.nomestudio = pl.nomestudio
+JOIN Elenco e ON pl.título = e.título AND pl.año = e.año
+WHERE pl.duración > 180 AND (e.nombre = 'Salma Hayek' OR e.nombre = 'Antonio Banderas');
+
+
+5. PR{nombre}(
+  SL{título = 'Romeo y Julieta' AND año = 1938}(Elenco)
+)
+
+SELECT nombre
+FROM Elenco
+WHERE título = 'Romeo y Julieta' AND año = 1938;
+
+
+6. PR{nombre, teléfono}(
+  Actor JN (
+    Elenco JN (
+      Película JN SL{nombre = 'George Lucas'}(Productor)
+    )
+  )
+)
+
+SELECT a.nombre, a.teléfono
+FROM Actor a
+JOIN Elenco e ON a.nombre = e.nombre
+JOIN Película pl ON e.título = pl.título AND e.año = pl.año
+JOIN Productor pr ON pl.idproductor = pr.idproductor
+WHERE pr.nombre = 'George Lucas';
+
+
+7. PR{nombre}(
+  Elenco JN SL{año BETWEEN 1995 AND 2000}(Película)
+)
+
+SELECT DISTINCT e.nombre
+FROM Elenco e
+JOIN Película pl ON e.título = pl.título AND e.año = pl.año
+WHERE pl.año BETWEEN 1995 AND 2000;
+
+
+8. PR{nombre}(
+  Productor JN SL{nomestudio = 'Universal Pictures'}(Película)
+)
+
+SELECT DISTINCT pr.nombre
+FROM Productor pr
+JOIN Película pl ON pr.idproductor = pl.idproductor
+WHERE pl.nomestudio = 'Universal Pictures';
+
+
+9. PR{nombre}(
+  SL{DATEDIFF(YEAR, fechanacimiento, CURRENT_DATE) > 60}(Actor) JN 
+  SL{título = 'Mago de OZ'}(Elenco)
+)
+
+SELECT a.nombre
+FROM Actor a
+JOIN Elenco e ON a.nombre = e.nombre
+WHERE e.título = 'Mago de OZ'
+AND DATEDIFF(YEAR, a.fechanacimiento, CURRENT_DATE) > 60;
+
+
+10. PR{nombre}(
+  (Productor JN SL{nomestudio = 'FOX'}(Película))
+  IN
+  (Productor JN SL{nomestudio = 'MGM'}(Película))
+)
+
+SELECT pr.nombre
+FROM Productor pr
+JOIN Película pl1 ON pr.idproductor = pl1.idproductor AND pl1.nomestudio = 'FOX'
+INTERSECT
+SELECT pr.nombre
+FROM Productor pr
+JOIN Película pl2 ON pr.idproductor = pl2.idproductor AND pl2.nomestudio = 'MGM';
